@@ -10,7 +10,8 @@ activationCodeList = []
 while count > 0:
     activationCode = ""
     for j in range(6):#生成激活码位数
-        activationCode += (codes[random.randint(0,len(codes)-1)])
+        #activationCode += (codes[random.randint(0,len(codes)-1)])
+        activationCode += random.choice(codes)
     if activationCode not in activationCodeList:#不允许激活码重复
         activationCodeList.append(activationCode)
         count -= 1
