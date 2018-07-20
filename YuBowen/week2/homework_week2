@@ -1,0 +1,28 @@
+#fibonacci-Method 1
+n = [1,1]
+for i in range (2,100):
+    a = n[i-1]+n[i-2]
+    if a > 100:
+        break
+    n.append(a)
+print (n)
+---------------------------
+#fibonacci-Method 2
+print (1)
+a=b=c=1
+while True:
+    if c > 100:
+        break
+    print (c)
+    c=a+b
+    a=b
+    b=c
+-----------------------------
+#Coupon code:
+import random
+n = int (input('random string length:'))
+a = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+i = 0
+for i in range (200):
+    coupon = ''.join(random.sample(a,n))
+    print (coupon)
