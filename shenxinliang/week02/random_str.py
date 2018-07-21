@@ -5,7 +5,7 @@ s1 = set()
 while True:
     s = 'abcdefghjkl1234567890'
     ys = ''
-    for i in range(6):
+    for i in range(5):
         ys += random.choice(s)
         print(ys)
 
