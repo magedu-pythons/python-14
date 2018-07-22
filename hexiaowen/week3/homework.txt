@@ -1,0 +1,5 @@
+This paper deals with the problem of audio source separation
+using multichannel observation. Utilizing the sparseness of
+sound signals in the time-frequency domain is a successful
+approach to source separation that enables us to perform separation based on spatial features obtained from a microphone
+array. On the other hand, nonnegative matrix factorization
