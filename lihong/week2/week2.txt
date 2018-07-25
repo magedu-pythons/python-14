@@ -1,0 +1,31 @@
+#斐波那契数列
+#Method one
+num1=0
+num2=1
+print(num2)
+for _ in range(100):
+    num3=num1+num2
+    num1=num2
+    num2=num3
+    if num3<100:
+        print(num3)
+#Method two
+num1=0
+num2=1
+while True:
+    num1,num2=num2,num1+num2
+    print(num1)
+    if num2>100:
+        break
+#打印200个随机激活码
+import random
+lst=[]
+count=0
+while True:
+    i=random.randint(10000,99999)
+    if i not in lst:
+        lst.append(i)
+        count+=1
+        if count>=200:
+            break
+print(lst)
