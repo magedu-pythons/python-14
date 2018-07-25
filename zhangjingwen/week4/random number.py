@@ -7,8 +7,8 @@ ratio = [10**i for i in range(9)]
 
 nums = []
 for _ in range(20):
-    base = [random.random(), random.randint(1, 10)]
-    num = random.choice(sign) + str(random.choice(base) * random.choice(ratio))
+    base = [random.random()*random.choice(ratio), int(random.random()* random.choice(ratio))]
+    num = random.choice(sign) + str(random.choice(base))
     if '.' in num:
         nums.append(float(num))
     else:
@@ -21,9 +21,9 @@ print("The first three largest Numbers are:\n{}".format(nums[-1:-4:-1]))
 #运行结果
 '''
 All nums are:
-[-90000000, -7000000, -2000000, -90000, -40000, -40000, -9697.759659600048, -5184.420125416943, -396.59179990056913, -30, 
-0.21107941608713077,30, 397.0061521800744, 8000, 600000, 1471733.6890839273, 2000000, 6000000, 29134860.10755708, 52425969.68838277]
+[-9458189.376565212, -121550, -64123, -4759.4901779010415, -776.4226404972998, -360.33377511583564, -35.95861884751383, -26.705539025014502, -1.081408343478456, 
+-0.6265000803522942,-0.6089768366254978, -0.4224645927591364, -0.3240733791802193, 0.08910083275222247, 0.5640521846126217, 8, 65, 69, 98923, 2223219.7626520954]
 
 The first three largest Numbers are:
-[52425969.68838277, 29134860.10755708, 6000000]
+[2223219.7626520954, 98923, 69]
 '''
