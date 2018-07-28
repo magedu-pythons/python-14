@@ -1,14 +1,17 @@
-import random, string
+import random
 
+count = 0
+s1 = set()
+while True:
+    s = 'abcdefghjkl1234567890'
+    ys = ''
+    for i in range(5):
+        ys += random.choice(s)
+        print(ys)
 
-# String模块ascii_letters和digits方法，其中ascii_letters是生成所有字母，从a-z和A-Z,digits是生成所有数字0-9
-def rand_str(num, length=5):
-    for i in range(num):
-        chars = string.ascii_letters + string.digits  # 包含以下内容abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-        s = [random.choice(chars) for i in range(length)]  # 随机从chars抽取5个字符
-        print('{0}\n'.format(''.join(s)))
+    s1.add(ys)
 
+    if len(s1) == 200:
+        break
 
-if __name__ == '__main__':
-    # rand_str(200)#生成200个激活
-    print(rand_str(200))
+print(s1)
