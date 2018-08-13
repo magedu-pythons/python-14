@@ -13,6 +13,7 @@ for n in range(50):
             active_code += '-'
     lst_code.append(active_code)
     active_code = ''
+set(lst_code)
 
 for i in lst_code:
     print(i)
