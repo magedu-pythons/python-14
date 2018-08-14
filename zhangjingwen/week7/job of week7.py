@@ -5,15 +5,21 @@ print([x for x in filter(lambda i:not","in i, "1,2,3")])
 print([x for x in "1,2,3"[::2]])
 
 # 2、使用Python copy一个文件，从a目录,copy文件到b目录
+from pathlib import Path
 import shutil
-#import os
+import os
 
 
-f1 = "F:/python-14/zhangjingwen/week7/a/test.txt"
-f2 = "F:/python-14/zhangjingwen/week7/b"
-shutil.copy2(f1, f2)
-# print(os.stat(f1))
-# print(os.stat(f2+'/test.txt'))
+p1 = Path("F:/python-14/zhangjingwen/week7/a/test.txt")
+p2 = Path("F:/python-14/zhangjingwen/week7/b")
+if p1.exists():
+    if not p2.exists():
+        p2.mkdir(parents=True)
+    shutil.copy2(str(p1), str(p2))
+else:
+    print("Source path not exist!")
+print(os.stat(str(p1)))
+print(os.stat(str(p2)+'/test.txt'))
 
 
 # 3、以下代码输出什么，请解释原因(写到问题下方):
