@@ -3,12 +3,17 @@
 import random
 
 str = 'ABCDEFGHIGKLMNOPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789'
-length = len(str)
 
-for x in range(200):
+codelist = []
+count=0
+while count<200:
     code = ''
     for i in range(5):
         code += random.choice(str)
-    print(code)
+    if code not in codelist:
+        codelist.append(code)
+        count+=1
+
+print(codelist)
 
 
