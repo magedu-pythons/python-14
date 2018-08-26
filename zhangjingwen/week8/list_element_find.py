@@ -4,30 +4,32 @@
 
 
 def element_find(src: list, num: int):
-    new = src.copy()
-    new.append(num/2)
-    new.sort()
-    index = new.index(num/2)
-    same = [x for x in new[index+1:] if x == num/2]
-    larger = [x for x in new[index+1:] if x > num/2]
-
     while len(src) >= 2:
+        new = src.copy()
+        new.append(num/2)
+        new.sort()
+        index = new.index(num/2)
+        same = [x for x in new[index+1:] if x == num/2]
+        larger = [x for x in new[index+1:] if x > num/2]
+
+        result = []
         count1 = 0
-        lst = []
-        for i in range(index):
-            for j in larger:
-                count1 += 1
-                if j > num-new[i]:
-                    break                                         # 提前退出迭代
-                if new[i] + j == num:
-                    lst.append((new[i], j))
-        # lst = [(new[i], j) for i in range(index) for j in larger if new[i] + j == num]
+        if new[:index] and larger:
+            for i in range(index):
+                for j in larger:
+                    count1 += 1
+                    if j > num-new[i]:
+                        break                                         # 提前退出迭代
+                    if new[i] + j == num:
+                        result.append((new[i], j))
+            # lst = [(new[i], j) for i in range(index) for j in larger if new[i] + j == num]
 
         if len(same) >= 2:                                        # 等于中值情况的处理
             for _ in range(len(same)-1):
-                lst.append((same[0], same[0]))
+                result.append((same[0], same[0]))
         count = count1 + (len(same)-1 if len(same) >= 2 else 0)   # 迭代次数统计
-        return (lst, count) if lst else None
+
+        return (result, count) if result else None
     else:
         return
 
