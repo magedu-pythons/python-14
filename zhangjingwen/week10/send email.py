@@ -41,7 +41,7 @@ class MyMail:
             elif p.is_file():
                 file_list.append(p)
 
-        return file_list
+        yield from file_list
 
     def addReceiver(self, *args):
         """add target mail address,sep by ',',simplely check if target is vaild"""
