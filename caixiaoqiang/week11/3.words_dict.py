@@ -30,8 +30,8 @@ def WordsDict(strs):
 
 
 try:
-    # strs = str(input("请输入字符串："))
-    strs = 'thisisananyandexample'
+    strs = str(input("请输入字符串："))
+    #strs = 'thisisananyandexample'
     print(strs)
     deal = WordsDict(strs)
     print(deal)

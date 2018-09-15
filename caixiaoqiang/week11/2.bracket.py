@@ -14,10 +14,10 @@ def bracket(comb, left, right):
     if right == 0:
         print(comb)
     if right > 0 and right > left:
-        print("right （剩余:{}, ）剩余:{}, {}".format(left, right, comb))
+        #print("right （剩余:{}, ）剩余:{}, {}".format(left, right, comb))
         bracket(comb + ')', left, right - 1)
     if left > 0:
-        print("left （剩余:{}, ）剩余:{}, {}".format(left, right, comb))
+        #print("left （剩余:{}, ）剩余:{}, {}".format(left, right, comb))
         bracket(comb + '(', left - 1, right)
 
 
