@@ -32,3 +32,7 @@ def words_count(file_text):
                     else:
                         count_dict[word] += 1
     return count_dict
+
+class A:
+    def __init__(self):
+        self.name = 'aaa'
